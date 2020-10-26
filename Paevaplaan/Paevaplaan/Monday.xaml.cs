@@ -20,6 +20,7 @@ namespace Paevaplaan
             ListView list = new ListView();//список для отображения планов
             list.ItemsSource = tasks;//данные из списка планов
             list.ItemSelected += List_ItemSelected;
+            Button back = new Button { Text = "back", BackgroundColor = Color.Green, ImageSource = "back.png" };
             Content = new StackLayout { Children = { list } };//отображаем список на странице
         }
         string time;
@@ -41,6 +42,8 @@ namespace Paevaplaan
                     time = "21:00";
                 }
                 await DisplayAlert(time, text, "Jah");
+            }
+            { 
             }
         }
     }

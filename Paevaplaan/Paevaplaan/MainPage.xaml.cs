@@ -16,18 +16,21 @@ namespace Paevaplaan
             Button Mon_btn = new Button { Text = "Monday" };
             stack.Children.Add(Mon_btn);
             Mon_btn.Clicked += new EventHandler(btn_Clicked);
+            BackgroundColor = Color.Red;
 
             Content = stack;
 
             Button Tue_btn = new Button { Text = "Tuesday" };
             stack.Children.Add(Tue_btn);
             Tue_btn.Clicked += new EventHandler(btn_Clicked);
+            BackgroundColor = Color.Green;
 
             Content = stack;
 
             Button Wed_btn = new Button { Text = "Wednesday" };
             stack.Children.Add(Wed_btn);
             Wed_btn.Clicked += new EventHandler(btn_Clicked);
+            
 
             Content = stack;
 

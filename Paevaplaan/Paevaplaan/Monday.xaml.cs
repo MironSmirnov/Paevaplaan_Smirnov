@@ -21,8 +21,24 @@ namespace Paevaplaan
             list.ItemsSource = tasks;//данные из списка планов
             list.ItemSelected += List_ItemSelected;
             Button back = new Button { Text = "back", BackgroundColor = Color.Green, ImageSource = "back.png" };
-            Content = new StackLayout { Children = { list } };//отображаем список на странице
+            back.Clicked += Back_Clicked;
+            Content = new StackLayout { Children = { list, back } };//отображаем список на странице
+
+            Button next = new Button { Text = "next", BackgroundColor = Color.Green, ImageSource = "next.png" };
+            next.Clicked += Next_Clicked; ; ; ; ; ; ; ; ;
+            Content = new StackLayout { Children = { list, back, next } };
         }
+
+        private async void Next_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Tuesday());
+        }
+
+        private async void Back_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
         string time;
         private async void List_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
